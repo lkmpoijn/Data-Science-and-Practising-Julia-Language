@@ -360,7 +360,7 @@ categories of operators in Julia:
 \end{enumerate}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{n}{x} \PY{o}{=} \PY{l+m+mi}{2}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{x} \PY{o}{=} \PY{l+m+mi}{2}
         \PY{n}{y} \PY{o}{=} \PY{l+m+mi}{3}
         \PY{n}{z} \PY{o}{=} \PY{l+m+mi}{4}
         
@@ -371,6 +371,10 @@ categories of operators in Julia:
         \PY{n}{y}
 \end{Verbatim}
 
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}2}]:} 3
+\end{Verbatim}
+            
     When constructing expressing with multiple operators, the order in which
 these operators are applied to the expression is known as operator
 precedence.
@@ -379,11 +383,15 @@ With the parentheses () inclueded in the expression, we can control the
 order by ourselves like the following code
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{n}{x}\PY{o}{*}\PY{n}{y}\PY{o}{+}\PY{n}{z}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{x}\PY{o}{*}\PY{n}{y}\PY{o}{+}\PY{n}{z}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}
         \PY{n}{x}\PY{o}{*}\PY{p}{(}\PY{n}{y}\PY{o}{+}\PY{n}{z}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{)}
         \PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{n}{y}\PY{p}{)}\PY{o}{+}\PY{p}{(}\PY{n}{z}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
 
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} 28
+\end{Verbatim}
+            
     \hypertarget{types}{%
 \subsection{Types}\label{types}}
 
@@ -396,31 +404,15 @@ computer. Minimum and Maximum can be showed by \texttt{typemin()} and
 \texttt{typemax()}.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{Sys}\PY{o}{.}\PY{n+nb}{WORD\PYZus{}SIZE}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{Sys}\PY{o}{.}\PY{n+nb}{WORD\PYZus{}SIZE}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} 64
+{\color{outcolor}Out[{\color{outcolor}4}]:} 64
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{typemax}\PY{p}{(}\PY{k+kt}{Int}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} 9223372036854775807
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{typemin}\PY{p}{(}\PY{k+kt}{Int}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} -9223372036854775808
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{typemax}\PY{p}{(}\PY{k+kt}{Int64}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{typemax}\PY{p}{(}\PY{k+kt}{Int}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -428,11 +420,27 @@ computer. Minimum and Maximum can be showed by \texttt{typemin()} and
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{typemax}\PY{p}{(}\PY{k+kt}{Float32}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{typemin}\PY{p}{(}\PY{k+kt}{Int}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} Inf32
+{\color{outcolor}Out[{\color{outcolor}6}]:} -9223372036854775808
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{typemax}\PY{p}{(}\PY{k+kt}{Int64}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} 9223372036854775807
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{typemax}\PY{p}{(}\PY{k+kt}{Float32}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}8}]:} Inf32
 \end{Verbatim}
             
     Some types use leftmost bit to control the sign, such as \texttt{Int64},
@@ -443,7 +451,7 @@ Boolean values are 8-bit integers, with false being 0 and true being
 its allowable size.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{literal\PYZus{}int} \PY{o}{=} \PY{l+m+mi}{1}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{literal\PYZus{}int} \PY{o}{=} \PY{l+m+mi}{1}
         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{y}\PY{l+s}{p}\PY{l+s}{e}\PY{l+s}{o}\PY{l+s}{f}\PY{l+s}{(}\PY{l+s}{l}\PY{l+s}{i}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{\PYZus{}}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{t}\PY{l+s}{)}\PY{l+s}{:}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{typeof}\PY{p}{(}\PY{n}{literal\PYZus{}int}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
@@ -453,19 +461,19 @@ typeof(literal\_int):Int64
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{x} \PY{o}{=} \PY{n}{typemax}\PY{p}{(}\PY{k+kt}{Int64}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{x} \PY{o}{=} \PY{n}{typemax}\PY{p}{(}\PY{k+kt}{Int64}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} 9223372036854775807
+{\color{outcolor}Out[{\color{outcolor}10}]:} 9223372036854775807
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{x} \PY{o}{+=} \PY{l+m+mi}{1}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{x} \PY{o}{+=} \PY{l+m+mi}{1}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} -9223372036854775808
+{\color{outcolor}Out[{\color{outcolor}11}]:} -9223372036854775808
 \end{Verbatim}
             
     \hypertarget{floats}{%
@@ -508,7 +516,7 @@ Some tips:
 \end{enumerate}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{x1} \PY{o}{=} \PY{l+m+mf}{1.0}
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{x1} \PY{o}{=} \PY{l+m+mf}{1.0}
          \PY{n}{x64} \PY{o}{=} \PY{l+m+mf}{15e\PYZhy{}15}
          \PY{n}{x32} \PY{o}{=} \PY{l+m+mf}{2.5f\PYZhy{}4}
          \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{x}\PY{l+s}{1}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{typeof}\PY{p}{(}\PY{n}{x1}\PY{p}{)}\PY{p}{)}
@@ -526,12 +534,12 @@ x32 is Float32
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{l+m+mf}{9.2\PYZus{}4}\PY{o}{==}\PY{l+m+mf}{9.24}
+{\color{incolor}In [{\color{incolor}13}]:} \PY{l+m+mf}{9.2\PYZus{}4}\PY{o}{==}\PY{l+m+mf}{9.24}
          \PY{c}{\PYZsh{}\PYZsh{} digit separation using an \PYZus{}}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} true
+{\color{outcolor}Out[{\color{outcolor}13}]:} true
 \end{Verbatim}
             
     In machine, it is defined that the smallest value is \(1+z\neq 1\). In
@@ -547,15 +555,15 @@ calculation is smaller than machine epsilon or when numbers of similar
 precision are subtracted.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{eps}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{eps}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} 2.220446049250313e-16
+{\color{outcolor}Out[{\color{outcolor}14}]:} 2.220446049250313e-16
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{n1} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{1e\PYZhy{}25}\PY{p}{,}\PY{l+m+mf}{1e\PYZhy{}5}\PY{p}{,}\PY{l+m+mf}{1.}\PY{p}{,}\PY{l+m+mf}{1e5}\PY{p}{,}\PY{l+m+mf}{1e25}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{n1} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{1e\PYZhy{}25}\PY{p}{,}\PY{l+m+mf}{1e\PYZhy{}5}\PY{p}{,}\PY{l+m+mf}{1.}\PY{p}{,}\PY{l+m+mf}{1e5}\PY{p}{,}\PY{l+m+mf}{1e25}\PY{p}{]}
          \PY{k}{for} \PY{n}{i} \PY{k+kp}{in} \PY{n}{n1}
              \PY{n}{println}\PY{p}{(}\PY{o}{*}\PY{p}{(}\PY{n}{i}\PY{p}{,}\PY{n}{eps}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
          \PY{k}{end}
@@ -587,19 +595,19 @@ new string must be built from another string. Strings are defined by
 double or triple quotes.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{s1} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{H}\PY{l+s}{i}\PY{l+s}{\PYZdq{}}
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{s1} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{H}\PY{l+s}{i}\PY{l+s}{\PYZdq{}}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} "Hi"
+{\color{outcolor}Out[{\color{outcolor}16}]:} "Hi"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{s2} \PY{o}{=} \PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}\PY{l+s}{I}\PY{l+s}{ }\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{q}\PY{l+s}{u}\PY{l+s}{o}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{c}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{s2} \PY{o}{=} \PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}\PY{l+s}{I}\PY{l+s}{ }\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{q}\PY{l+s}{u}\PY{l+s}{o}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{c}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} "I have a \textbackslash{}"quote\textbackslash{}" character"
+{\color{outcolor}Out[{\color{outcolor}17}]:} "I have a \textbackslash{}"quote\textbackslash{}" character"
 \end{Verbatim}
             
     String can be sliced using range indexing, e.g.,
@@ -615,73 +623,73 @@ string's definition, complex strings can be built in a readbale form,
 without multiple string multiplications.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{c}{\PYZsh{}\PYZsh{} some examples of strings}
-        \PY{n}{str} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{D}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{c}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{f}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{!}\PY{l+s}{\PYZdq{}}
-        \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c}{\PYZsh{}\PYZsh{} some examples of strings}
+         \PY{n}{str} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{D}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{c}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{f}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{!}\PY{l+s}{\PYZdq{}}
+         \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} 'D': ASCII/Unicode U+0044 (category Lu: Letter, uppercase)
+{\color{outcolor}Out[{\color{outcolor}18}]:} 'D': ASCII/Unicode U+0044 (category Lu: Letter, uppercase)
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{str}\PY{p}{[}\PY{k}{end}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{str}\PY{p}{[}\PY{k}{end}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} '!': ASCII/Unicode U+0021 (category Po: Punctuation, other)
+{\color{outcolor}Out[{\color{outcolor}19}]:} '!': ASCII/Unicode U+0021 (category Po: Punctuation, other)
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{4}\PY{o}{:}\PY{l+m+mi}{7}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{4}\PY{o}{:}\PY{l+m+mi}{7}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} "a sc"
+{\color{outcolor}Out[{\color{outcolor}20}]:} "a sc"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{str}\PY{p}{[}\PY{k}{end}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{o}{:}\PY{k}{end}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{str}\PY{p}{[}\PY{k}{end}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{o}{:}\PY{k}{end}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} "fun!"
+{\color{outcolor}Out[{\color{outcolor}21}]:} "fun!"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{string}\PY{p}{(}\PY{n}{str}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{S}\PY{l+s}{u}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{:}\PY{l+s}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{string}\PY{p}{(}\PY{n}{str}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ }\PY{l+s}{S}\PY{l+s}{u}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{:}\PY{l+s}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} "Data science is fun! Sure is :)"
+{\color{outcolor}Out[{\color{outcolor}22}]:} "Data science is fun! Sure is :)"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{str} \PY{o}{*} \PY{l+s}{\PYZdq{}}\PY{l+s}{S}\PY{l+s}{u}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{:}\PY{l+s}{)}\PY{l+s}{\PYZdq{}}
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{str} \PY{o}{*} \PY{l+s}{\PYZdq{}}\PY{l+s}{S}\PY{l+s}{u}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{:}\PY{l+s}{)}\PY{l+s}{\PYZdq{}}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} "Data science is fun!Sure is :)"
+{\color{outcolor}Out[{\color{outcolor}23}]:} "Data science is fun!Sure is :)"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{c}{\PYZsh{} Interpolation}
-        \PY{l+s}{\PYZdq{}}\PY{l+s}{1}\PY{l+s}{+}\PY{l+s}{2}\PY{l+s}{=}\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{)}\PY{l+s}{\PYZdq{}}
+{\color{incolor}In [{\color{incolor}24}]:} \PY{c}{\PYZsh{} Interpolation}
+         \PY{l+s}{\PYZdq{}}\PY{l+s}{1}\PY{l+s}{+}\PY{l+s}{2}\PY{l+s}{=}\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{)}\PY{l+s}{\PYZdq{}}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} "1+2=3"
+{\color{outcolor}Out[{\color{outcolor}24}]:} "1+2=3"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{word1}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{J}\PY{l+s}{u}\PY{l+s}{l}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}
-        \PY{n}{word2}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{d}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}
-        \PY{n}{word3}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{s}\PY{l+s}{c}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}
-        \PY{l+s}{\PYZdq{}}\PY{l+s+si}{\PYZdl{}word1}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{ }\PY{l+s}{f}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{ }\PY{l+s+si}{\PYZdl{}word2}\PY{l+s}{ }\PY{l+s+si}{\PYZdl{}word3}\PY{l+s}{\PYZdq{}}
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{word1}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{J}\PY{l+s}{u}\PY{l+s}{l}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}
+         \PY{n}{word2}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{d}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}
+         \PY{n}{word3}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{s}\PY{l+s}{c}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}
+         \PY{l+s}{\PYZdq{}}\PY{l+s+si}{\PYZdl{}word1}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{ }\PY{l+s}{f}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{ }\PY{l+s+si}{\PYZdl{}word2}\PY{l+s}{ }\PY{l+s+si}{\PYZdl{}word3}\PY{l+s}{\PYZdq{}}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} "Julia is great for data science"
+{\color{outcolor}Out[{\color{outcolor}25}]:} "Julia is great for data science"
 \end{Verbatim}
             
     Strings can be comared lexicographically using comarsion operators,
@@ -711,58 +719,58 @@ of the string is reached. Some useful string functions are:
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{c}{\PYZsh{} Lexicographical comparison}
-        \PY{n}{s1} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{b}\PY{l+s}{c}\PY{l+s}{d}\PY{l+s}{\PYZdq{}}
-        \PY{n}{s2} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{b}\PY{l+s}{d}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}
-        
-        \PY{n}{s1} \PY{o}{==} \PY{n}{s2}
+{\color{incolor}In [{\color{incolor}26}]:} \PY{c}{\PYZsh{} Lexicographical comparison}
+         \PY{n}{s1} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{b}\PY{l+s}{c}\PY{l+s}{d}\PY{l+s}{\PYZdq{}}
+         \PY{n}{s2} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{b}\PY{l+s}{d}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}
+         
+         \PY{n}{s1} \PY{o}{==} \PY{n}{s2}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} false
+{\color{outcolor}Out[{\color{outcolor}26}]:} false
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{s1} \PY{o}{\PYZlt{}} \PY{n}{s2}
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{s1} \PY{o}{\PYZlt{}} \PY{n}{s2}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} true
+{\color{outcolor}Out[{\color{outcolor}27}]:} true
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{s1} \PY{o}{\PYZgt{}} \PY{n}{s2}
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{s1} \PY{o}{\PYZgt{}} \PY{n}{s2}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} false
+{\color{outcolor}Out[{\color{outcolor}28}]:} false
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{c}{\PYZsh{} String functions}
-        \PY{n}{str} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{D}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{c}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{f}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{!}\PY{l+s}{\PYZdq{}}
-        
-        \PY{n}{findfirst}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{D}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}29}]:} \PY{c}{\PYZsh{} String functions}
+         \PY{n}{str} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{D}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{c}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{f}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{!}\PY{l+s}{\PYZdq{}}
+         
+         \PY{n}{findfirst}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{D}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} 1:4
+{\color{outcolor}Out[{\color{outcolor}29}]:} 1:4
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{occursin}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{occursin}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} true
+{\color{outcolor}Out[{\color{outcolor}30}]:} true
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{replace}\PY{p}{(}\PY{n}{str}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{f}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{o}{=\PYZgt{}}\PY{l+s}{\PYZdq{}}\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{replace}\PY{p}{(}\PY{n}{str}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{f}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{o}{=\PYZgt{}}\PY{l+s}{\PYZdq{}}\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} "Data science is great!"
+{\color{outcolor}Out[{\color{outcolor}31}]:} "Data science is great!"
 \end{Verbatim}
             
     Julia fully supports regular expressions (regexes). Regexes in Julia are
@@ -792,56 +800,56 @@ book, and intersted readers are encouraged to consult
 further details.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{c}{\PYZsh{} Regular expresions}
+{\color{incolor}In [{\color{incolor}32}]:} \PY{c}{\PYZsh{} Regular expresions}
          
          \PY{c}{\PYZsh{} match alpha\PYZhy{}numeric charaters at the start of the str}
          \PY{n}{occursin}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{[}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} true
+{\color{outcolor}Out[{\color{outcolor}32}]:} true
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{occursin}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{\PYZca{}}\PY{l+s+sr}{[}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{occursin}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{\PYZca{}}\PY{l+s+sr}{[}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} true
+{\color{outcolor}Out[{\color{outcolor}33}]:} true
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{occursin}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{[}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdl{}}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{occursin}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{[}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdl{}}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} false
+{\color{outcolor}Out[{\color{outcolor}34}]:} false
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{occursin}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{[}\PY{l+s+sr}{\PYZca{}}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{Z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{occursin}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{[}\PY{l+s+sr}{\PYZca{}}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{Z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:} true
+{\color{outcolor}Out[{\color{outcolor}35}]:} true
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{c}{\PYZsh{}\PYZsh{} matches the first non\PYZhy{}alpha\PYZhy{}numeric character in the string}
+{\color{incolor}In [{\color{incolor}36}]:} \PY{c}{\PYZsh{}\PYZsh{} matches the first non\PYZhy{}alpha\PYZhy{}numeric character in the string}
          \PY{n}{match}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{[}\PY{l+s+sr}{\PYZca{}}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{Z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}14}]:} RegexMatch(" ")
+{\color{outcolor}Out[{\color{outcolor}36}]:} RegexMatch(" ")
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}15}]:} \PY{c}{\PYZsh{}\PYZsh{} matches all the non\PYZhy{}alpha\PYZhy{}numeric characters in the string}
+{\color{incolor}In [{\color{incolor}37}]:} \PY{c}{\PYZsh{}\PYZsh{} matches all the non\PYZhy{}alpha\PYZhy{}numeric characters in the string}
          \PY{n}{collect}\PY{p}{(}\PY{n}{eachmatch}\PY{p}{(}\PY{l+s+sr}{r\PYZdq{}}\PY{l+s+sr}{[}\PY{l+s+sr}{\PYZca{}}\PY{l+s+sr}{a}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{z}\PY{l+s+sr}{A}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{Z}\PY{l+s+sr}{0}\PY{l+s+sr}{\PYZhy{}}\PY{l+s+sr}{9}\PY{l+s+sr}{]}\PY{l+s+sr}{\PYZdq{}}\PY{p}{,}\PY{n}{str}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}15}]:} 4-element Array\{RegexMatch,1\}:
+{\color{outcolor}Out[{\color{outcolor}37}]:} 4-element Array\{RegexMatch,1\}:
           RegexMatch(" ")
           RegexMatch(" ")
           RegexMatch(" ")
@@ -862,62 +870,62 @@ values can be assigned directly from atuple where the value of each
 variable corresponds to a value in the tuple.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{c}{\PYZsh{} A tuple comprising only floats}
+{\color{incolor}In [{\color{incolor}38}]:} \PY{c}{\PYZsh{} A tuple comprising only floats}
          \PY{n}{tup1} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{3.0}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mf}{0.8}\PY{p}{,}\PY{l+m+mf}{1.9}\PY{p}{)}
          \PY{n}{typeof}\PY{p}{(}\PY{n}{tup1}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}16}]:} NTuple\{4,Float64\}
+{\color{outcolor}Out[{\color{outcolor}38}]:} NTuple\{4,Float64\}
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}17}]:} \PY{c}{\PYZsh{}\PYZsh{} A tuple comprising strings and floats}
+{\color{incolor}In [{\color{incolor}39}]:} \PY{c}{\PYZsh{}\PYZsh{} A tuple comprising strings and floats}
          \PY{n}{tup2} \PY{o}{=} \PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{D}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+m+mf}{2.5}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{S}\PY{l+s}{c}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{c}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+m+mf}{8.8}\PY{p}{)}
          \PY{n}{typeof}\PY{p}{(}\PY{n}{tup2}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}17}]:} Tuple\{String,Float64,String,Float64\}
+{\color{outcolor}Out[{\color{outcolor}39}]:} Tuple\{String,Float64,String,Float64\}
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}18}]:} \PY{c}{\PYZsh{}\PYZsh{} variable assignment}
+{\color{incolor}In [{\color{incolor}40}]:} \PY{c}{\PYZsh{}\PYZsh{} variable assignment}
          \PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{n}{c} \PY{o}{=} \PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{F}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mf}{5.2}\PY{p}{)}
          \PY{n}{a}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}18}]:} "Fast"
+{\color{outcolor}Out[{\color{outcolor}40}]:} "Fast"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{b}
+{\color{incolor}In [{\color{incolor}41}]:} \PY{n}{b}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}19}]:} 1
+{\color{outcolor}Out[{\color{outcolor}41}]:} 1
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{c}
+{\color{incolor}In [{\color{incolor}42}]:} \PY{n}{c}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}20}]:} 5.2
+{\color{outcolor}Out[{\color{outcolor}42}]:} 5.2
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}22}]:} \PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{n}{c}\PY{p}{)}\PY{o}{=}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{s}\PY{l+s}{a}\PY{l+s}{f}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+m+mi}{2341}\PY{p}{,}\PY{l+m+mf}{123.412}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}43}]:} \PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{n}{c}\PY{p}{)}\PY{o}{=}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{s}\PY{l+s}{a}\PY{l+s}{f}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+m+mi}{2341}\PY{p}{,}\PY{l+m+mf}{123.412}\PY{p}{)}
          \PY{n}{typeof}\PY{p}{(}\PY{n}{a}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}22}]:} String
+{\color{outcolor}Out[{\color{outcolor}43}]:} String
 \end{Verbatim}
             
     \hypertarget{data-structures}{%
-\subsection{DATA STRUCTURES}\label{data-structures}}
+\subsection{Data Structures}\label{data-structures}}
 
 \hypertarget{arrays}{%
 \subsubsection{Arrays}\label{arrays}}
@@ -944,33 +952,33 @@ uninitialized array, \texttt{nothing} to create arrays with no value, or
 different types can be created with type \texttt{Any}.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}23}]:} \PY{c}{\PYZsh{} A vector of length 5 containing integers}
+{\color{incolor}In [{\color{incolor}44}]:} \PY{c}{\PYZsh{} A vector of length 5 containing integers}
          \PY{n}{a1} \PY{o}{=} \PY{k+kt}{Array}\PY{p}{\PYZob{}}\PY{k+kt}{Int64}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{n}{undef}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
          \PY{n}{typeof}\PY{p}{(}\PY{n}{a1}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}23}]:} Array\{Int64,1\}
+{\color{outcolor}Out[{\color{outcolor}44}]:} Array\{Int64,1\}
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}25}]:} \PY{c}{\PYZsh{} A 2\PYZbs{}times2 matrix containting integers}
+{\color{incolor}In [{\color{incolor}45}]:} \PY{c}{\PYZsh{} A 2\PYZbs{}times2 matrix containting integers}
          \PY{n}{a2} \PY{o}{=} \PY{k+kt}{Array}\PY{p}{\PYZob{}}\PY{k+kt}{Int64}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{n}{undef}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}25}]:} 2×2 Array\{Int64,2\}:
-          7926335345396809728  872415232
-          3891110079994265600  295721712
+{\color{outcolor}Out[{\color{outcolor}45}]:} 2×2 Array\{Int64,2\}:
+          113449264  260573392
+          104915024  253234816
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{c}{\PYZsh{} A 2\PYZbs{}times 2 matrix containing Any type}
+{\color{incolor}In [{\color{incolor}46}]:} \PY{c}{\PYZsh{} A 2\PYZbs{}times 2 matrix containing Any type}
          \PY{n}{a2} \PY{o}{=} \PY{k+kt}{Array}\PY{p}{\PYZob{}}\PY{k+kt}{Any}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{n}{undef}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}26}]:} 2×2 Array\{Any,2\}:
+{\color{outcolor}Out[{\color{outcolor}46}]:} 2×2 Array\{Any,2\}:
           \#undef  \#undef
           \#undef  \#undef
 \end{Verbatim}
@@ -980,13 +988,13 @@ the \texttt{Vector()}, \texttt{Matrix()} and \texttt{collect()}
 functions can also be used
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{c}{\PYZsh{}\PYZsh{} A three\PYZhy{}element row \PYZdq{}Vector\PYZdq{}}
+{\color{incolor}In [{\color{incolor}47}]:} \PY{c}{\PYZsh{}\PYZsh{} A three\PYZhy{}element row \PYZdq{}Vector\PYZdq{}}
          \PY{n}{a4} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}
          \PY{n}{typeof}\PY{p}{(}\PY{n}{a4}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}27}]:} Array\{Int64,1\}
+{\color{outcolor}Out[{\color{outcolor}47}]:} Array\{Int64,1\}
 \end{Verbatim}
             
     The array \texttt{a4} above does not have a second dimension, i.e., it
@@ -995,65 +1003,65 @@ words, Julia makes a distinction between \texttt{Array\{T,1\}} and
 \texttt{Array\{T,2\}}.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}28}]:} \PY{c}{\PYZsh{}\PYZsh{} A 1\PYZbs{}times 3 colum vector  \PYZhy{}\PYZhy{} a two\PYZhy{}dimensional array}
+{\color{incolor}In [{\color{incolor}48}]:} \PY{c}{\PYZsh{}\PYZsh{} A 1\PYZbs{}times 3 colum vector  \PYZhy{}\PYZhy{} a two\PYZhy{}dimensional array}
          \PY{n}{a5} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3}\PY{p}{]}
          \PY{n}{typeof}\PY{p}{(}\PY{n}{a5}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}28}]:} Array\{Int64,2\}
+{\color{outcolor}Out[{\color{outcolor}48}]:} Array\{Int64,2\}
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}33}]:} \PY{c}{\PYZsh{}\PYZsh{} A 2\PYZbs{}times 3 matrix, where ; is used to separate rows}
+{\color{incolor}In [{\color{incolor}49}]:} \PY{c}{\PYZsh{}\PYZsh{} A 2\PYZbs{}times 3 matrix, where ; is used to separate rows}
          \PY{n}{a6} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{80} \PY{l+m+mi}{81} \PY{l+m+mi}{82} \PY{p}{;} \PY{l+m+mi}{90} \PY{l+m+mi}{91} \PY{l+m+mi}{92}\PY{p}{]}
          \PY{n}{typeof}\PY{p}{(}\PY{n}{a6}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}33}]:} Array\{Int64,2\}
+{\color{outcolor}Out[{\color{outcolor}49}]:} Array\{Int64,2\}
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}34}]:} \PY{c}{\PYZsh{}\PYZsh{} Arrays containing elements of a specific type can be constructed like:}
+{\color{incolor}In [{\color{incolor}50}]:} \PY{c}{\PYZsh{}\PYZsh{} Arrays containing elements of a specific type can be constructed like:}
          \PY{n}{a7} \PY{o}{=} \PY{k+kt}{Float64}\PY{p}{[}\PY{l+m+mf}{3.0} \PY{l+m+mf}{5.0} \PY{p}{;} \PY{l+m+mf}{1.1} \PY{l+m+mf}{3.5}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}34}]:} 2×2 Array\{Float64,2\}:
+{\color{outcolor}Out[{\color{outcolor}50}]:} 2×2 Array\{Float64,2\}:
           3.0  5.0
           1.1  3.5
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}35}]:} \PY{c}{\PYZsh{}\PYZsh{} Arrays can be explicitly created like this:}
+{\color{incolor}In [{\color{incolor}51}]:} \PY{c}{\PYZsh{}\PYZsh{} Arrays can be explicitly created like this:}
          \PY{k+kt}{Vector}\PY{p}{(}\PY{n}{undef}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}35}]:} 3-element Array\{Any,1\}:
+{\color{outcolor}Out[{\color{outcolor}51}]:} 3-element Array\{Any,1\}:
           \#undef
           \#undef
           \#undef
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}36}]:} \PY{k+kt}{Matrix}\PY{p}{(}\PY{n}{undef}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}52}]:} \PY{k+kt}{Matrix}\PY{p}{(}\PY{n}{undef}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}36}]:} 2×2 Array\{Any,2\}:
+{\color{outcolor}Out[{\color{outcolor}52}]:} 2×2 Array\{Any,2\}:
           \#undef  \#undef
           \#undef  \#undef
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}37}]:} \PY{c}{\PYZsh{} A 3\PYZhy{}element Float array}
+{\color{incolor}In [{\color{incolor}53}]:} \PY{c}{\PYZsh{} A 3\PYZhy{}element Float array}
          \PY{n}{a3} \PY{o}{=} \PY{n}{collect}\PY{p}{(}\PY{k+kt}{Float64}\PY{p}{,} \PY{l+m+mi}{3}\PY{o}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{o}{:}\PY{l+m+mi}{1}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}37}]:} 3-element Array\{Float64,1\}:
+{\color{outcolor}Out[{\color{outcolor}53}]:} 3-element Array\{Float64,1\}:
           3.0
           2.0
           1.0
@@ -1110,178 +1118,178 @@ The following code blocks illustrates some useful array functions as we
 as slicing. Slicing for arrays works similarly to slicing for strings.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{c}{\PYZsh{}\PYZsh{} Create a 2x2 identity matrix}
-        \PY{k}{using} \PY{n}{LinearAlgebra}
-        \PY{n}{imat} \PY{o}{=} \PY{k+kt}{Matrix}\PY{p}{\PYZob{}}\PY{k+kt}{Int8}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{n+nb}{I}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}54}]:} \PY{c}{\PYZsh{}\PYZsh{} Create a 2x2 identity matrix}
+         \PY{k}{using} \PY{n}{LinearAlgebra}
+         \PY{n}{imat} \PY{o}{=} \PY{k+kt}{Matrix}\PY{p}{\PYZob{}}\PY{k+kt}{Int8}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{n+nb}{I}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} 2×2 Array\{Int8,2\}:
-         1  0
-         0  1
+{\color{outcolor}Out[{\color{outcolor}54}]:} 2×2 Array\{Int8,2\}:
+          1  0
+          0  1
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{c}{\PYZsh{}\PYZsh{} return rando numbers between 0 and 1}
-        \PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}55}]:} \PY{c}{\PYZsh{}\PYZsh{} return rando numbers between 0 and 1}
+         \PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} 2-element Array\{Float64,1\}:
-         0.8953492020837617
-         0.8218388470887807
+{\color{outcolor}Out[{\color{outcolor}55}]:} 2-element Array\{Float64,1\}:
+          0.3542359887124156
+          0.8424354785965347
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{B} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{80} \PY{l+m+mi}{81} \PY{l+m+mi}{82} \PY{p}{;} \PY{l+m+mi}{90} \PY{l+m+mi}{91} \PY{l+m+mi}{92}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}56}]:} \PY{n}{B} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{80} \PY{l+m+mi}{81} \PY{l+m+mi}{82} \PY{p}{;} \PY{l+m+mi}{90} \PY{l+m+mi}{91} \PY{l+m+mi}{92}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} 2×3 Array\{Int64,2\}:
-         80  81  82
-         90  91  92
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{rand}\PY{p}{(}\PY{n}{B}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} 2-element Array\{Int64,1\}:
-         90
-         81
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{c}{\PYZsh{}\PYZsh{} The number of elements in B}
-        \PY{n}{length}\PY{p}{(}\PY{n}{B}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} 6
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{c}{\PYZsh{}\PYZsh{} The dimensions of B}
-        \PY{n}{size}\PY{p}{(}\PY{n}{B}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} (2, 3)
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{c}{\PYZsh{}\PYZsh{} the number of dimensions of B}
-        \PY{n}{ndims}\PY{p}{(}\PY{n}{B}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} 2
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{c}{\PYZsh{}\PYZsh{} A new array with the same elements (data) as B but different dimensions }
-        \PY{n}{reshape}\PY{p}{(}\PY{n}{B}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} 3×2 Array\{Int64,2\}:
-         80  91
-         90  82
-         81  92
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{ndims}\PY{p}{(}\PY{n}{B}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} 2
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{c}{\PYZsh{}\PYZsh{} A copy of B, where elements are recursively copied}
-         \PY{n}{B2} \PY{o}{=} \PY{n}{deepcopy}\PY{p}{(}\PY{n}{B}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} 2×3 Array\{Int64,2\}:
+{\color{outcolor}Out[{\color{outcolor}56}]:} 2×3 Array\{Int64,2\}:
           80  81  82
           90  91  92
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{c}{\PYZsh{}\PYZsh{} When slicing, a slice is specified for each dimension}
+{\color{incolor}In [{\color{incolor}57}]:} \PY{n}{rand}\PY{p}{(}\PY{n}{B}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}57}]:} 2-element Array\{Int64,1\}:
+          91
+          82
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}58}]:} \PY{c}{\PYZsh{}\PYZsh{} The number of elements in B}
+         \PY{n}{length}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}58}]:} 6
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}59}]:} \PY{c}{\PYZsh{}\PYZsh{} The dimensions of B}
+         \PY{n}{size}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}59}]:} (2, 3)
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}60}]:} \PY{c}{\PYZsh{}\PYZsh{} the number of dimensions of B}
+         \PY{n}{ndims}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}60}]:} 2
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}61}]:} \PY{c}{\PYZsh{}\PYZsh{} A new array with the same elements (data) as B but different dimensions }
+         \PY{n}{reshape}\PY{p}{(}\PY{n}{B}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}61}]:} 3×2 Array\{Int64,2\}:
+          80  91
+          90  82
+          81  92
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}62}]:} \PY{n}{ndims}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}62}]:} 2
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}63}]:} \PY{c}{\PYZsh{}\PYZsh{} A copy of B, where elements are recursively copied}
+         \PY{n}{B2} \PY{o}{=} \PY{n}{deepcopy}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}63}]:} 2×3 Array\{Int64,2\}:
+          80  81  82
+          90  91  92
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}64}]:} \PY{c}{\PYZsh{}\PYZsh{} When slicing, a slice is specified for each dimension}
          \PY{c}{\PYZsh{}\PYZsh{} The first two rows of the first column done two ways}
          \PY{n}{B}\PY{p}{[}\PY{l+m+mi}{1}\PY{o}{:}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} 2-element Array\{Int64,1\}:
+{\color{outcolor}Out[{\color{outcolor}64}]:} 2-element Array\{Int64,1\}:
           80
           90
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{B}\PY{p}{[}\PY{l+m+mi}{1}\PY{o}{:}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}65}]:} \PY{n}{B}\PY{p}{[}\PY{l+m+mi}{1}\PY{o}{:}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} 2-element Array\{Int64,1\}:
+{\color{outcolor}Out[{\color{outcolor}65}]:} 2-element Array\{Int64,1\}:
           80
           90
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{c}{\PYZsh{}\PYZsh{} The first two rows of the second column}
+{\color{incolor}In [{\color{incolor}66}]:} \PY{c}{\PYZsh{}\PYZsh{} The first two rows of the second column}
          \PY{n}{B}\PY{p}{[}\PY{l+m+mi}{1}\PY{o}{:}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:} 2-element Array\{Int64,1\}:
+{\color{outcolor}Out[{\color{outcolor}66}]:} 2-element Array\{Int64,1\}:
           81
           91
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}15}]:} \PY{c}{\PYZsh{} The first row}
+{\color{incolor}In [{\color{incolor}67}]:} \PY{c}{\PYZsh{} The first row}
          \PY{n}{B}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{:}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}15}]:} 3-element Array\{Int64,1\}:
+{\color{outcolor}Out[{\color{outcolor}67}]:} 3-element Array\{Int64,1\}:
           80
           81
           82
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{c}{\PYZsh{}\PYZsh{} The third element}
+{\color{incolor}In [{\color{incolor}68}]:} \PY{c}{\PYZsh{}\PYZsh{} The third element}
          \PY{n}{B}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}16}]:} 81
+{\color{outcolor}Out[{\color{outcolor}68}]:} 81
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}17}]:} \PY{c}{\PYZsh{} Another way to build an array is using comprehensions}
+{\color{incolor}In [{\color{incolor}69}]:} \PY{c}{\PYZsh{} Another way to build an array is using comprehensions}
          \PY{n}{A1} \PY{o}{=} \PY{p}{[}\PY{n}{sqrt}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{k+kp}{in} \PY{p}{[}\PY{l+m+mi}{16}\PY{p}{,}\PY{l+m+mi}{25}\PY{p}{,}\PY{l+m+mi}{64}\PY{p}{]}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}17}]:} 3-element Array\{Float64,1\}:
+{\color{outcolor}Out[{\color{outcolor}69}]:} 3-element Array\{Float64,1\}:
           4.0
           5.0
           8.0
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{A2} \PY{o}{=} \PY{p}{[}\PY{n}{i}\PY{o}{\PYZca{}}\PY{l+m+mi}{2} \PY{k}{for} \PY{n}{i} \PY{k+kp}{in} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}70}]:} \PY{n}{A2} \PY{o}{=} \PY{p}{[}\PY{n}{i}\PY{o}{\PYZca{}}\PY{l+m+mi}{2} \PY{k}{for} \PY{n}{i} \PY{k+kp}{in} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}18}]:} 3-element Array\{Int64,1\}:
+{\color{outcolor}Out[{\color{outcolor}70}]:} 3-element Array\{Int64,1\}:
           1
           4
           9
@@ -1312,7 +1320,7 @@ keyword \texttt{Dict} and types can be specified for both the key and
 the value. The keys are hashed and are always unique.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}21}]:} \PY{c}{\PYZsh{}\PYZsh{} Three dictionaries, D0 is empty, D1 and D1 are the same}
+{\color{incolor}In [{\color{incolor}71}]:} \PY{c}{\PYZsh{}\PYZsh{} Three dictionaries, D0 is empty, D1 and D1 are the same}
          \PY{n}{D0} \PY{o}{=} \PY{k+kt}{Dict}\PY{p}{(}\PY{p}{)}
          \PY{n}{D1} \PY{o}{=} \PY{k+kt}{Dict}\PY{p}{(}\PY{l+m+mi}{1} \PY{o}{=\PYZgt{}} \PY{l+s}{\PYZdq{}}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{=\PYZgt{}} \PY{l+s}{\PYZdq{}}\PY{l+s}{w}\PY{l+s}{h}\PY{l+s}{i}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{p}{)}
          \PY{n}{D2} \PY{o}{=} \PY{k+kt}{Dict}\PY{p}{\PYZob{}}\PY{k+kt}{Integer}\PY{p}{,} \PY{n}{String}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{l+m+mi}{1} \PY{o}{=\PYZgt{}} \PY{l+s}{\PYZdq{}}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{=\PYZgt{}} \PY{l+s}{\PYZdq{}}\PY{l+s}{w}\PY{l+s}{h}\PY{l+s}{i}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{p}{)}
@@ -1320,11 +1328,11 @@ the value. The keys are hashed and are always unique.
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}21}]:} Dict\{Integer,String\}
+{\color{outcolor}Out[{\color{outcolor}71}]:} Dict\{Integer,String\}
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}23}]:} \PY{c}{\PYZsh{}\PYZsh{} Dictionaries can be created using a loop}
+{\color{incolor}In [{\color{incolor}72}]:} \PY{c}{\PYZsh{}\PYZsh{} Dictionaries can be created using a loop}
          \PY{n}{food} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{s}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{m}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{p}\PY{l+s}{l}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{y}\PY{l+s}{r}\PY{l+s}{u}\PY{l+s}{p}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{o}\PY{l+s}{u}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{p}{]}
          
          \PY{n}{food\PYZus{}dict} \PY{o}{=} \PY{k+kt}{Dict}\PY{p}{\PYZob{}}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{String}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{p}{)}
@@ -1337,20 +1345,20 @@ the value. The keys are hashed and are always unique.
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}23}]:} Dict\{Int64,String\} with 3 entries:
+{\color{outcolor}Out[{\color{outcolor}72}]:} Dict\{Int64,String\} with 3 entries:
            2 => "maple syrup"
            3 => "touriere"
            1 => "salmon"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{c}{\PYZsh{}\PYZsh{} Dictionaries can also be created using the generator syntax}
+{\color{incolor}In [{\color{incolor}73}]:} \PY{c}{\PYZsh{}\PYZsh{} Dictionaries can also be created using the generator syntax}
          \PY{n}{wine} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{w}\PY{l+s}{h}\PY{l+s}{i}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{r}\PY{l+s}{o}\PY{l+s}{s}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{p}{]}
          \PY{n}{wine\PYZus{}dict} \PY{o}{=} \PY{k+kt}{Dict}\PY{p}{\PYZob{}}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{String}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{n}{i} \PY{o}{=\PYZgt{}} \PY{n}{wine}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{k+kp}{in} \PY{l+m+mi}{1}\PY{o}{:}\PY{n}{length}\PY{p}{(}\PY{n}{wine}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}26}]:} Dict\{Int64,String\} with 3 entries:
+{\color{outcolor}Out[{\color{outcolor}73}]:} Dict\{Int64,String\} with 3 entries:
            2 => "white"
            3 => "rose"
            1 => "red"
@@ -1365,145 +1373,148 @@ entries from a dictionary as well as various ways of manipulating keys
 and values. Note that the following code block builds on the previous.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{c}{\PYZsh{}\PYZsh{} Values can be accessed similarly to an array, but by key:}
+{\color{incolor}In [{\color{incolor}74}]:} \PY{c}{\PYZsh{}\PYZsh{} Values can be accessed similarly to an array, but by key:}
          \PY{n}{food\PYZus{}dict}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}27}]:} "salmon"
+{\color{outcolor}Out[{\color{outcolor}74}]:} "salmon"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}28}]:} \PY{c}{\PYZsh{}\PYZsh{} The get() function can also be used;  }
-         \PY{c}{\PYZsh{}\PYZsh{} note that \PYZdq{}unknown\PYZdq{} is the value returned here if the key is not in the dictionary}
+{\color{incolor}In [{\color{incolor}75}]:} \PY{c}{\PYZsh{}\PYZsh{} The get() function can alos be used; note that \PYZdq{}unknown\PYZdq{} is  }
+         \PY{c}{\PYZsh{}\PYZsh{} the value returned here if the key is not in the dictionary}
          \PY{n}{get}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{k}\PY{l+s}{n}\PY{l+s}{o}\PY{l+s}{w}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}28}]:} "salmon"
+{\color{outcolor}Out[{\color{outcolor}75}]:} "salmon"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{get}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{k}\PY{l+s}{n}\PY{l+s}{o}\PY{l+s}{w}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}76}]:} \PY{n}{get}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{u}\PY{l+s}{n}\PY{l+s}{k}\PY{l+s}{n}\PY{l+s}{o}\PY{l+s}{w}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}29}]:} "unknown"
+{\color{outcolor}Out[{\color{outcolor}76}]:} "unknown"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}30}]:} \PY{c}{\PYZsh{}\PYZsh{} we can also check directly for the presence of a particular key}
+{\color{incolor}In [{\color{incolor}77}]:} \PY{c}{\PYZsh{}\PYZsh{} we can also check directly for the presence of a particular key}
          \PY{n}{haskey}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}30}]:} true
+{\color{outcolor}Out[{\color{outcolor}77}]:} true
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{haskey}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}78}]:} \PY{n}{haskey}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}31}]:} false
+{\color{outcolor}Out[{\color{outcolor}78}]:} false
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}33}]:} \PY{c}{\PYZsh{}\PYZsh{} The getkey() function can also be used; note that 999 is the }
+{\color{incolor}In [{\color{incolor}79}]:} \PY{c}{\PYZsh{}\PYZsh{} The getkey() function can also be used; note that 999 is the }
          \PY{c}{\PYZsh{}\PYZsh{} value returned here if the key is not in the dictionary}
          \PY{n}{getkey}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{999}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}33}]:} 1
+{\color{outcolor}Out[{\color{outcolor}79}]:} 1
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}36}]:} \PY{c}{\PYZsh{}\PYZsh{} A new value can be associated with an existing key}
+{\color{incolor}In [{\color{incolor}80}]:} \PY{c}{\PYZsh{}\PYZsh{} A new value can be associated with an existing key}
          \PY{n}{food\PYZus{}dict}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
          \PY{n}{food\PYZus{}dict}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{b}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{\PYZdq{}}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}36}]:} Dict\{Int64,String\} with 3 entries:
-           2 => "maple syrup"
-           3 => "touriere"
-           1 => "lobster"
+{\color{outcolor}Out[{\color{outcolor}80}]:} "lobster"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}40}]:} \PY{c}{\PYZsh{}\PYZsh{} Two common ways to add new entries:}
+{\color{incolor}In [{\color{incolor}81}]:} \PY{c}{\PYZsh{}\PYZsh{} Two common ways to add new entries:}
          \PY{n}{food\PYZus{}dict}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{b}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{n}\PY{l+s}{o}\PY{l+s}{c}\PY{l+s}{k}\PY{l+s}{\PYZdq{}}
          \PY{n}{get!}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{i}\PY{l+s}{s}\PY{l+s}{s}\PY{l+s}{\PYZdq{}}\PY{p}{)}
          \PY{n}{food\PYZus{}dict}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}
 \end{Verbatim}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}40}]:} "miss"
-\end{Verbatim}
-            
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}41}]:} \PY{c}{\PYZsh{}\PYZsh{} The advantage of get!() is that will not add the new entry if}
+
+        KeyError: key 5 not found
+
+        
+
+        Stacktrace:
+
+         [1] getindex(::Dict\{Int64,String\}, ::Int64) at .\textbackslash{}dict.jl:478
+
+         [2] top-level scope at In[81]:4
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}82}]:} \PY{c}{\PYZsh{}\PYZsh{} The advantage of get!() is that will not add the new entry if}
          \PY{c}{\PYZsh{}\PYZsh{} a value is already associated with the key}
          \PY{n}{get!}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{f}\PY{l+s}{a}\PY{l+s}{k}\PY{l+s}{e}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}41}]:} "bannock"
+{\color{outcolor}Out[{\color{outcolor}82}]:} "bannock"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}42}]:} \PY{c}{\PYZsh{}\PYZsh{} Just deleting entries by key is straightforward}
+{\color{incolor}In [{\color{incolor}83}]:} \PY{c}{\PYZsh{}\PYZsh{} Just deleting entries by key is straightforward}
          \PY{n}{delete!}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}42}]:} Dict\{Int64,String\} with 4 entries:
+{\color{outcolor}Out[{\color{outcolor}83}]:} Dict\{Int64,String\} with 3 entries:
            2 => "maple syrup"
            3 => "touriere"
-           5 => "miss"
            1 => "lobster"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}44}]:} \PY{c}{\PYZsh{}\PYZsh{} But we can also delete by key and return the value assocated with the key;}
+{\color{incolor}In [{\color{incolor}84}]:} \PY{c}{\PYZsh{}\PYZsh{} But we can also delete by key and return the value assocated with the key;}
          \PY{c}{\PYZsh{}\PYZsh{} note that 999 is reurned here if the key is not present}
          \PY{n}{deleted\PYZus{}fd\PYZus{}value} \PY{o}{=} \PY{n}{pop!}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{999}\PY{p}{)}
          \PY{n}{food\PYZus{}dict}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}44}]:} Dict\{Int64,String\} with 3 entries:
+{\color{outcolor}Out[{\color{outcolor}84}]:} Dict\{Int64,String\} with 2 entries:
            2 => "maple syrup"
-           5 => "miss"
            1 => "lobster"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}45}]:} \PY{c}{\PYZsh{}\PYZsh{} Keys can be coerced into arrays}
+{\color{incolor}In [{\color{incolor}85}]:} \PY{c}{\PYZsh{}\PYZsh{} Keys can be coerced into arrays}
          \PY{n}{collect}\PY{p}{(}\PY{n}{keys}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}45}]:} 3-element Array\{Int64,1\}:
+{\color{outcolor}Out[{\color{outcolor}85}]:} 2-element Array\{Int64,1\}:
           2
-          5
           1
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{collect}\PY{p}{(}\PY{n}{values}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}86}]:} \PY{n}{collect}\PY{p}{(}\PY{n}{values}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}46}]:} 3-element Array\{String,1\}:
+{\color{outcolor}Out[{\color{outcolor}86}]:} 2-element Array\{String,1\}:
           "maple syrup"
-          "miss"       
           "lobster"    
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}47}]:} \PY{c}{\PYZsh{}\PYZsh{} We can also iterate over both keys and values}
+{\color{incolor}In [{\color{incolor}87}]:} \PY{c}{\PYZsh{}\PYZsh{} We can also iterate over both keys and values}
          \PY{k}{for} \PY{p}{(}\PY{n}{k}\PY{p}{,} \PY{n}{v}\PY{p}{)} \PY{k+kp}{in} \PY{n}{food\PYZus{}dict}
              \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{f}\PY{l+s}{o}\PY{l+s}{o}\PY{l+s}{d}\PY{l+s}{\PYZus{}}\PY{l+s}{d}\PY{l+s}{i}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{k}\PY{l+s}{e}\PY{l+s}{y}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{k}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{v}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{u}\PY{l+s}{e}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{v}\PY{p}{)}
          \PY{k}{end}
@@ -1511,13 +1522,12 @@ and values. Note that the following code block builds on the previous.
 
     \begin{Verbatim}[commandchars=\\\{\}]
 food\_dict: key: 2value: maple syrup
-food\_dict: key: 5value: miss
 food\_dict: key: 1value: lobster
 
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}48}]:} \PY{c}{\PYZsh{}\PYZsh{} We can also just loop over keys}
+{\color{incolor}In [{\color{incolor}88}]:} \PY{c}{\PYZsh{}\PYZsh{} We can also just loop over keys}
          \PY{k}{for} \PY{n}{k} \PY{k+kp}{in} \PY{n}{keys}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{)}
              \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{f}\PY{l+s}{o}\PY{l+s}{o}\PY{l+s}{d}\PY{l+s}{\PYZus{}}\PY{l+s}{d}\PY{l+s}{i}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{k}\PY{l+s}{e}\PY{l+s}{y}\PY{l+s}{s}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{k}\PY{p}{)}
          \PY{k}{end}
@@ -1525,13 +1535,12 @@ food\_dict: key: 1value: lobster
 
     \begin{Verbatim}[commandchars=\\\{\}]
 food\_dict: keys: 2
-food\_dict: keys: 5
 food\_dict: keys: 1
 
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}50}]:} \PY{c}{\PYZsh{}\PYZsh{} Or could also just loop over values}
+{\color{incolor}In [{\color{incolor}89}]:} \PY{c}{\PYZsh{}\PYZsh{} Or could also just loop over values}
          \PY{k}{for} \PY{n}{v} \PY{k+kp}{in} \PY{n}{values}\PY{p}{(}\PY{n}{food\PYZus{}dict}\PY{p}{)}
              \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{f}\PY{l+s}{o}\PY{l+s}{o}\PY{l+s}{d}\PY{l+s}{\PYZus{}}\PY{l+s}{d}\PY{l+s}{i}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{v}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{u}\PY{l+s}{e}\PY{l+s}{:}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{v}\PY{p}{)}
          \PY{k}{end}
@@ -1539,13 +1548,12 @@ food\_dict: keys: 1
 
     \begin{Verbatim}[commandchars=\\\{\}]
 food\_dict: value:maple syrup
-food\_dict: value:miss
 food\_dict: value:lobster
 
     \end{Verbatim}
 
     \hypertarget{control-flow}{%
-\subsection{CONTROL FLOW}\label{control-flow}}
+\subsection{Control Flow}\label{control-flow}}
 
 \hypertarget{compound-expressions}{%
 \subsubsection{Compound Expressions}\label{compound-expressions}}
@@ -1556,7 +1564,7 @@ subexpression is returned as the value of the expression. THere area two
 to achieve this: \texttt{Begin} blocks and chains.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}51}]:} \PY{c}{\PYZsh{}\PYZsh{} A begin block}
+{\color{incolor}In [{\color{incolor}90}]:} \PY{c}{\PYZsh{}\PYZsh{} A begin block}
          \PY{n}{b1} \PY{o}{=} \PY{k}{begin}
              \PY{n}{c} \PY{o}{=} \PY{l+m+mi}{20}
              \PY{n}{d} \PY{o}{=} \PY{l+m+mi}{5}
@@ -1571,7 +1579,7 @@ b1: 100
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}52}]:} \PY{c}{\PYZsh{}\PYZsh{} A chain}
+{\color{incolor}In [{\color{incolor}91}]:} \PY{c}{\PYZsh{}\PYZsh{} A chain}
          \PY{n}{b2} \PY{o}{=} \PY{p}{(}\PY{n}{c}\PY{o}{=} \PY{l+m+mi}{20} \PY{p}{;} \PY{n}{d} \PY{o}{=} \PY{l+m+mi}{5} \PY{p}{;} \PY{n}{c} \PY{o}{*} \PY{n}{d}\PY{p}{)}
          \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{b}\PY{l+s}{2}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{b2}\PY{p}{)}
 \end{Verbatim}
@@ -1599,7 +1607,7 @@ value of the last executed statement. Programmers can use as many
 is discouraged.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}53}]:} \PY{c}{\PYZsh{} An if\PYZhy{}else construct}
+{\color{incolor}In [{\color{incolor}92}]:} \PY{c}{\PYZsh{} An if\PYZhy{}else construct}
          \PY{n}{k} \PY{o}{=} \PY{l+m+mi}{1}
          \PY{k}{if} \PY{n}{k} \PY{o}{==} \PY{l+m+mi}{0}
              \PY{l+s}{\PYZdq{}}\PY{l+s}{z}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{o}\PY{l+s}{\PYZdq{}}
@@ -1609,11 +1617,11 @@ is discouraged.
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}53}]:} "not zero"
+{\color{outcolor}Out[{\color{outcolor}92}]:} "not zero"
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}54}]:} \PY{c}{\PYZsh{}\PYZsh{} An if\PYZhy{}elseif\PYZhy{}else construct}
+{\color{incolor}In [{\color{incolor}93}]:} \PY{c}{\PYZsh{}\PYZsh{} An if\PYZhy{}elseif\PYZhy{}else construct}
          \PY{n}{k} \PY{o}{=} \PY{l+m+mi}{11}
          \PY{k}{if} \PY{n}{k} \PY{o}{\PYZpc{}} \PY{l+m+mi}{3} \PY{o}{==} \PY{l+m+mi}{0}
              \PY{l+m+mi}{0}
@@ -1625,7 +1633,7 @@ is discouraged.
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}54}]:} 2
+{\color{outcolor}Out[{\color{outcolor}93}]:} 2
 \end{Verbatim}
             
     An alternative approach to conditional evaluation is via shortcircuit
@@ -1639,7 +1647,7 @@ accommodate situations analogous to an \texttt{if-elseif-else} construct
 with one or more \texttt{ifelse} blocks.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}55}]:} \PY{c}{\PYZsh{} A short\PYZhy{}circuit evaluation}
+{\color{incolor}In [{\color{incolor}94}]:} \PY{c}{\PYZsh{} A short\PYZhy{}circuit evaluation}
          \PY{n}{b} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{;} \PY{n}{c} \PY{o}{=} \PY{l+m+mi}{20}\PY{p}{;}
          \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{S}\PY{l+s}{C}\PY{l+s}{E}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{b}\PY{l+s}{ }\PY{l+s}{\PYZlt{}}\PY{l+s}{ }\PY{l+s}{c}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{b} \PY{o}{\PYZlt{}} \PY{n}{c} \PY{o}{?} \PY{l+s}{\PYZdq{}}\PY{l+s}{l}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{\PYZdq{}} \PY{o}{:} \PY{l+s}{\PYZdq{}}\PY{l+s}{n}\PY{l+s}{o}\PY{l+s}{t}\PY{l+s}{ }\PY{l+s}{l}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
@@ -1650,9 +1658,11 @@ SCE: b < c: less than
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}58}]:} \PY{c}{\PYZsh{} A short\PYZhy{}circuit evaluation with nesting}
+{\color{incolor}In [{\color{incolor}95}]:} \PY{c}{\PYZsh{} A short\PYZhy{}circuit evaluation with nesting}
          \PY{n}{d} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{;} \PY{n}{f} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{;}
-         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{S}\PY{l+s}{C}\PY{l+s}{E}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{c}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{ }\PY{l+s}{d}\PY{l+s}{ }\PY{l+s}{v}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{e}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{d} \PY{o}{\PYZlt{}} \PY{n}{f} \PY{o}{?} \PY{l+s}{\PYZdq{}}\PY{l+s}{l}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{ }\PY{l+s}{\PYZdq{}} \PY{o}{:} \PY{n}{d} \PY{o}{\PYZgt{}} \PY{n}{f} \PY{o}{?} \PY{l+s}{\PYZdq{}}\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{\PYZdq{}} \PY{o}{:} \PY{l+s}{\PYZdq{}}\PY{l+s}{e}\PY{l+s}{q}\PY{l+s}{u}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{S}\PY{l+s}{C}\PY{l+s}{E}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{c}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{ }\PY{l+s}{d}\PY{l+s}{ }\PY{l+s}{v}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{e}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} 
+                 \PY{n}{d} \PY{o}{\PYZlt{}} \PY{n}{f} \PY{o}{?} \PY{l+s}{\PYZdq{}}\PY{l+s}{l}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{ }\PY{l+s}{\PYZdq{}} \PY{o}{:} 
+                 \PY{n}{d} \PY{o}{\PYZgt{}} \PY{n}{f} \PY{o}{?} \PY{l+s}{\PYZdq{}}\PY{l+s}{g}\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{\PYZdq{}} \PY{o}{:} \PY{l+s}{\PYZdq{}}\PY{l+s}{e}\PY{l+s}{q}\PY{l+s}{u}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -1665,7 +1675,7 @@ in Julia (the exponential function); while it can be overwritten, it is
 best practice to avoid doing so.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}59}]:} \PY{n+nb}{e}
+{\color{incolor}In [{\color{incolor}96}]:} \PY{n+nb}{e}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -1676,17 +1686,17 @@ best practice to avoid doing so.
 
         Stacktrace:
 
-         [1] top-level scope at In[59]:1
+         [1] top-level scope at In[96]:1
 
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}60}]:} \PY{k}{using} \PY{n}{Base}\PY{o}{.}\PY{n}{MathConstants}
+{\color{incolor}In [{\color{incolor}97}]:} \PY{k}{using} \PY{n}{Base}\PY{o}{.}\PY{n}{MathConstants}
          \PY{n+nb}{e}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}60}]:} ℯ = 2.7182818284590{\ldots}
+{\color{outcolor}Out[{\color{outcolor}97}]:} ℯ = 2.7182818284590{\ldots}
 \end{Verbatim}
             
     \hypertarget{loops}{%
@@ -1711,6 +1721,89 @@ loops can access the elements of the container directly using the
 indexing variables forming a Cartesian product, e.g., if there are two
 indexing variables then, for each value of the first index, each value
 of the second index is evaluated.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}98}]:} \PY{n}{str} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{J}\PY{l+s}{u}\PY{l+s}{l}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{\PYZdq{}}
+         
+         \PY{c}{\PYZsh{}\PYZsh{} A for loop for a string, iterating by index}
+         \PY{k}{for} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{:}\PY{n}{length}\PY{p}{(}\PY{n}{str}\PY{p}{)}
+             \PY{n}{print}\PY{p}{(}\PY{n}{str}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+         \PY{k}{end}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Julia
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}100}]:} \PY{c}{\PYZsh{}\PYZsh{} A for loop for a string, iterating by container element}
+          \PY{k}{for} \PY{n}{s} \PY{k+kp}{in} \PY{n}{str}
+              \PY{n}{print}\PY{p}{(}\PY{n}{s}\PY{p}{)}
+          \PY{k}{end}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Julia
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}101}]:} \PY{c}{\PYZsh{}\PYZsh{} A nested for loop}
+          \PY{k}{for} \PY{n}{i} \PY{k+kp}{in} \PY{n}{str}\PY{p}{,} \PY{n}{j} \PY{o}{=} \PY{n}{length}\PY{p}{(}\PY{n}{str}\PY{p}{)}
+              \PY{n}{println}\PY{p}{(}\PY{p}{(}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{)}\PY{p}{)}
+          \PY{k}{end}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+('J', 5)
+('u', 5)
+('l', 5)
+('i', 5)
+('a', 5)
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}103}]:} \PY{n}{odd} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{]}
+          \PY{n}{even} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{]}
+          \PY{k}{for} \PY{n}{i} \PY{k+kp}{in} \PY{n}{odd}\PY{p}{,} \PY{n}{j} \PY{k+kp}{in} \PY{n}{even}
+              \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{i}\PY{l+s}{*}\PY{l+s}{j}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{i}\PY{o}{*}\PY{n}{j}\PY{p}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{k}{end}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+i*j: 2
+i*j: 4
+i*j: 6
+i*j: 6
+i*j: 12
+i*j: 18
+i*j: 10
+i*j: 20
+i*j: 30
+
+    \end{Verbatim}
+
+    A while loop evaluates a conditional expression and, as long as it is
+true, the loop evaluates the code in the body of the loop. To ensure
+that the loop will end at some stage, an operation inside the loop has
+to falsify the conditional expression. Programmers must ensure that a
+\texttt{while} loop will falsify the conditional expression, otherwise
+the loop will become ``infinity'' and never finish executing.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{c}{\PYZsh{}\PYZsh{} Example of an infinity while loop (nothing inside the loop can falsify}
+        \PY{c}{\PYZsh{}\PYZsh{} the condition x\PYZlt{}10)}
+        \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{0}
+        \PY{n}{x}\PY{o}{=}\PY{l+m+mi}{1}
+        \PY{k}{while} \PY{n}{x}\PY{o}{\PYZlt{}}\PY{l+m+mi}{10}
+            \PY{n}{x}\PY{o}{=}\PY{n}{x}\PY{o}{+}\PY{l+m+mi}{1}
+            \PY{n}{print}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+        \PY{k}{end}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+101010101010101010
+    \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor} }]:} 
