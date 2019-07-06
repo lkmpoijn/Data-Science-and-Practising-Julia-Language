@@ -52,7 +52,7 @@
     \usepackage{upquote} % Upright quotes for verbatim code
     \usepackage{eurosym} % defines \euro
     \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
-    %\usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
     \usepackage{fancyvrb} % verbatim replacement that allows latex
     \usepackage{grffile} % extends the file name processing of package graphics 
                          % to support a larger range 
@@ -149,7 +149,7 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{juliastart}
+    \title{Core Julia}
     
     
     
@@ -290,8 +290,7 @@
     
 
     
-    \hypertarget{core-julia}{%
-\section{Core Julia}\label{core-julia}}
+    \section{Core Julia}\label{core-julia}
 
 This chapter consists of six sections:
 
@@ -312,8 +311,7 @@ This chapter consists of six sections:
   Functions.
 \end{enumerate}
 
-\hypertarget{variable-names}{%
-\subsection{Variable names}\label{variable-names}}
+\subsection{Variable names}\label{variable-names}
 
 Variable names are case sensitive and Unicode names (in UTF-8 encoding)
 may be used. And names must begin with a letter, no matter lowercase or
@@ -340,8 +338,7 @@ in this language. The examples are below.
 {\color{outcolor}Out[{\color{outcolor}15}]:} true
 \end{Verbatim}
             
-    \hypertarget{operators}{%
-\subsection{Operators}\label{operators}}
+    \subsection{Operators}\label{operators}
 
 The operators are similar to \emph{R} and \emph{Python}. Four main
 categories of operators in Julia:
@@ -392,11 +389,9 @@ order by ourselves like the following code
 {\color{outcolor}Out[{\color{outcolor}17}]:} 28
 \end{Verbatim}
             
-    \hypertarget{types}{%
-\subsection{Types}\label{types}}
+    \subsection{Types}\label{types}
 
-\hypertarget{numeric}{%
-\subsubsection{Numeric}\label{numeric}}
+\subsubsection{Numeric}\label{numeric}
 
 Julia offers full support for real and complex numbers. The internal
 variable \texttt{Sys.WORD\_SIZE} displays the architecture type of the
@@ -476,8 +471,7 @@ typeof(literal\_int):Int64
 {\color{outcolor}Out[{\color{outcolor}25}]:} -9223372036854775808
 \end{Verbatim}
             
-    \hypertarget{floats}{%
-\subsubsection{Floats}\label{floats}}
+    \subsubsection{Floats}\label{floats}
 
 Floats are similar to scientific notation. They are made up of three
 components: asigned interger whose length determines the precision, the
@@ -578,8 +572,7 @@ precision are subtracted.
 
     \end{Verbatim}
 
-    \hypertarget{strings}{%
-\subsubsection{Strings}\label{strings}}
+    \subsubsection{Strings}\label{strings}
 
 In Julia, a string is a sequence of Unicode code points, using UTF-8
 encoding. Characters in strings have an index value within the string.
@@ -692,11 +685,11 @@ without multiple string multiplications.
 {\color{outcolor}Out[{\color{outcolor}39}]:} "Julia is great for data science"
 \end{Verbatim}
             
-    Strings can be comared lexicographically using comarsion operators,
-e.g.~\texttt{==}, \texttt{\textgreater{}}, etc. Lexicograohical
-comparison involves sequentially comparing string elements with the same
-position, until one pair of elements falsiies the comparison, or the end
-of the string is reached. Some useful string functions are:
+    Strings can be comared lexicographically using comarsion operators, e.g.
+\texttt{==}, \texttt{\textgreater{}}, etc. Lexicograohical comparison
+involves sequentially comparing string elements with the same position,
+until one pair of elements falsiies the comparison, or the end of the
+string is reached. Some useful string functions are:
 
 \begin{itemize}
 \tightlist
@@ -707,13 +700,13 @@ of the string is reached. Some useful string functions are:
   \texttt{occursin(substr,\ str)} returns \texttt{true/false} depending
   on the presence/absence of \texttt{substr} in \texttt{str}.
 \item
-  `repeat(str,n)' generates a new string that is the original string
+  'repeat(str,n)' generates a new string that is the original string
   \texttt{str} repeated \texttt{n} times.
 \item
-  `length(str)' returns the number of charaters in the string
+  'length(str)' returns the number of charaters in the string
   \texttt{str}.
 \item
-  `replace(str,ptn =\textgreater{} rep)' searches string \texttt{str}
+  'replace(str,ptn =\textgreater{} rep)' searches string \texttt{str}
   for the pattern \texttt{ptn} and, if it is present, replaces it with
   \texttt{rep}.
 \end{itemize}
@@ -856,8 +849,7 @@ further details.
           RegexMatch("!")
 \end{Verbatim}
             
-    \hypertarget{tuples}{%
-\subsubsection{Tuples}\label{tuples}}
+    \subsubsection{Tuples}\label{tuples}
 
 Tuples are a Julia type. They are an abstraction of function arguments
 without the function. The arguments are defined in a specific order and
@@ -924,11 +916,9 @@ variable corresponds to a value in the tuple.
 {\color{outcolor}Out[{\color{outcolor}57}]:} String
 \end{Verbatim}
             
-    \hypertarget{data-structures}{%
-\subsection{Data Structures}\label{data-structures}}
+    \subsection{Data Structures}\label{data-structures}
 
-\hypertarget{arrays}{%
-\subsubsection{Arrays}\label{arrays}}
+\subsubsection{Arrays}\label{arrays}
 
 An array is a multidimensional grid that stores objects of any type. To
 improve preformance, arrays should contain only one specific type, e.g.,
@@ -1304,8 +1294,7 @@ array with a function and a loop. These items are then collected into an
 array by the brackets \texttt{{[}{]}} that surround the loop and
 function.
 
-    \hypertarget{dictionaries}{%
-\subsubsection{Dictionaries}\label{dictionaries}}
+    \subsubsection{Dictionaries}\label{dictionaries}
 
 In Julia, dictionaries are defined as associative collections consisting
 of a key value pair, i.e., the key is associated with a specific value.
@@ -1552,11 +1541,9 @@ food\_dict: value:lobster
 
     \end{Verbatim}
 
-    \hypertarget{control-flow}{%
-\subsection{Control Flow}\label{control-flow}}
+    \subsection{Control Flow}\label{control-flow}
 
-\hypertarget{compound-expressions}{%
-\subsubsection{Compound Expressions}\label{compound-expressions}}
+\subsubsection{Compound Expressions}\label{compound-expressions}
 
 In Julia, a compound expression is one expression that is uesd to
 sequentially evalute a group of subexpressions. The value of the last
@@ -1589,8 +1576,7 @@ b2: 100
 
     \end{Verbatim}
 
-    \hypertarget{conditional-evaluation}{%
-\subsubsection{Conditional Evaluation}\label{conditional-evaluation}}
+    \subsubsection{Conditional Evaluation}\label{conditional-evaluation}
 
 Conditional evaluation allows parts of a program to evaluated, or not,
 based on the value of a Boolean expression, i.e., an expression that
@@ -1640,11 +1626,11 @@ is discouraged.
 evaluation. This construct has the form \texttt{a\ ?\ b\ :\ c}, where
 \texttt{a} is a Boolean expression, \texttt{b} is evaluated if
 \texttt{a} is true, and \texttt{c} is evaluated if \texttt{a} is false.
-Note that \texttt{?\ :} is called the ``ternary operator'', it
-assocaites from right to left, and it can be useful for short
-conditional statements. Ternary operators cna be chained together to
-accommodate situations analogous to an \texttt{if-elseif-else} construct
-with one or more \texttt{ifelse} blocks.
+Note that \texttt{?\ :} is called the "ternary operator", it assocaites
+from right to left, and it can be useful for short conditional
+statements. Ternary operators cna be chained together to accommodate
+situations analogous to an \texttt{if-elseif-else} construct with one or
+more \texttt{ifelse} blocks.
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}108}]:} \PY{c}{\PYZsh{} A short\PYZhy{}circuit evaluation}
@@ -1699,11 +1685,9 @@ best practice to avoid doing so.
 {\color{outcolor}Out[{\color{outcolor}111}]:} ℯ = 2.7182818284590{\ldots}
 \end{Verbatim}
             
-    \hypertarget{loops}{%
-\subsubsection{Loops}\label{loops}}
+    \subsubsection{Loops}\label{loops}
 
-\hypertarget{basics}{%
-\paragraph{Basics}\label{basics}}
+\paragraph{Basics}\label{basics}
 
 Two looping constructs exist in Julia: \texttt{for} loops and
 \texttt{while} loops. Theses loops can iterate over any container, such
@@ -1788,7 +1772,7 @@ true, the loop evaluates the code in the body of the loop. To ensure
 that the loop will end at some stage, an operation inside the loop has
 to falsify the conditional expression. Programmers must ensure that a
 \texttt{while} loop will falsify the conditional expression, otherwise
-the loop will become ``infinity'' and never finish executing.
+the loop will become "infinity" and never finish executing.
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}116}]:} \PY{c}{\PYZsh{}\PYZsh{} Example of an infinity while loop (nothing inside the loop can falsify}
@@ -1842,8 +1826,7 @@ the loop will become ``infinity'' and never finish executing.
 Converged at iteration 2
     \end{Verbatim}
 
-    \hypertarget{loop-termination}{%
-\paragraph{Loop termination}\label{loop-termination}}
+    \paragraph{Loop termination}\label{loop-termination}
 
 When writing loops, it often advantageous to allow a loop to terminate
 early, before it has completed. In the case of a \texttt{while} loop,
@@ -1928,8 +1911,7 @@ i: 5 --- sq: 25
 and there could be more complex code after the \texttt{continue}
 keyword.
 
-    \hypertarget{exception-handling}{%
-\paragraph{Exception handling}\label{exception-handling}}
+    \paragraph{Exception handling}\label{exception-handling}
 
 Exceptions are unexpected contions that can occur in a program while it
 is carrying out its computations. The program may not be able to carry
@@ -2088,8 +2070,7 @@ to \texttt{error()}. Note that \texttt{try-catch} blocks can degrade the
 preformance code, it is better to use standard condtitional evaluation
 to handle known exceptions.
 
-    \hypertarget{functions}{%
-\subsection{Functions}\label{functions}}
+    \subsection{Functions}\label{functions}
 
 A function is an object that takes argument values as a tuple and maps
 them to return value. Functions are first-class objects in Julia. They
@@ -2127,7 +2108,7 @@ include Unicode charaters. It is best practice to avoid abbreviations,
 e.g., \texttt{fibonacci()} is preferable to \texttt{fib()}. The body of
 the function is the part contained on the line between the
 \texttt{function} and \texttt{end} keywords. Parenthesis syntax is used
-to call a function, e.g.~\texttt{add(3,5)} returns \texttt{8}. Because
+to call a function, e.g. \texttt{add(3,5)} returns \texttt{8}. Because
 functions are objects, they can be passed around like any value and,
 when passed, the parentheses are omitted.
 
@@ -2312,10 +2293,211 @@ position in the function call. In the below code block, an MM algorithm
 is demonstrated. Note that we have already used MM algorithm, but now we
 construct an MM algorithm as a functino. MM algorithms are blueprints
 for algorithms that eiger iteratively minimize a majorizing function or
-iteratively maximize a minorizing functino -- see
+iteratively maximize a minorizing functino -\/- see
 \href{https://amstat.tandfonline.com/doi/abs/10.1198/0003130042836}{Hunter
 and Lange (2000,2004)} for further details.
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{c}{\PYZsh{}\PYZsh{} A function with a keyword argument}
+        \PY{c}{\PYZsh{}\PYZsh{} Argument after the ; are keyword argumennts}
+        \PY{c}{\PYZsh{}\PYZsh{} The default values are evaluated from left\PYZhy{}to\PYZhy{}right}
+        \PY{c}{\PYZsh{}\PYZsh{} This allows keyword arguments to refer previously defined keywords}
+        \PY{c}{\PYZsh{}\PYZsh{} Keyword arguments can have explicit types}
+        
+        \PY{c}{\PYZsh{}\PYZsh{} estimate the median of a 1D array using an MM algorithm}
+        \PY{c}{\PYZsh{}\PYZsh{} for clarity (too many m\PYZsq{}s!) we use an \PYZus{} in the function name}
+        
+        \PY{k}{function} \PY{n}{mm\PYZus{}median}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{eps}\PY{o}{=}\PY{l+m+mf}{0.001}\PY{p}{;}\PY{n}{maxit}\PY{o}{=}\PY{l+m+mi}{25}\PY{p}{,} \PY{n}{iter}\PY{o}{::}\PY{k+kt}{Int64}\PY{o}{=}\PY{k+kt}{Int}\PY{p}{(}\PY{n}{floor}\PY{p}{(}\PY{n}{eps}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            
+            \PY{c}{\PYZsh{}\PYZsh{} initalizations}
+            \PY{n}{psi} \PY{o}{=} \PY{n}{fill!}\PY{p}{(}\PY{k+kt}{Vector}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{n}{undef}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{l+m+mf}{1e2}\PY{p}{)}
+            
+            \PY{k}{while}\PY{p}{(}\PY{k+kc}{true}\PY{p}{)}
+                \PY{n}{iter} \PY{o}{+=} \PY{l+m+mi}{1}
+                \PY{k}{if} \PY{n}{iter} \PY{o}{==} \PY{n}{maxit}
+                    \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{M}\PY{l+s}{a}\PY{l+s}{x}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{ }\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{c}\PY{l+s}{h}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{ }\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{=}\PY{l+s+si}{\PYZdl{}iter}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+                    \PY{k}{break}
+                \PY{k}{end}
+                \PY{n}{num}\PY{p}{,} \PY{n}{den} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}
+                \PY{c}{\PYZsh{}\PYZsh{} use map() to  do elementwise operations in wgt}
+                \PY{n}{wgt} \PY{o}{=} \PY{n}{map}\PY{p}{(}\PY{n}{d} \PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}} \PY{p}{(}\PY{n}{abs}\PY{p}{(}\PY{n}{d} \PY{o}{\PYZhy{}} \PY{n}{psi}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{\PYZca{}}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{x}\PY{p}{)}
+                \PY{n}{num} \PY{o}{=} \PY{n}{sum}\PY{p}{(}\PY{n}{map}\PY{p}{(}\PY{o}{*}\PY{p}{,}\PY{n}{wgt}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{)}
+                \PY{n}{den} \PY{o}{=} \PY{n}{sum}\PY{p}{(}\PY{n}{wgt}\PY{p}{)}
+                \PY{n}{psi} \PY{o}{=} \PY{n}{circshift}\PY{p}{(}\PY{n}{psi}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+                \PY{n}{psi}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{n}{num}\PY{o}{/}\PY{n}{den}
+                
+                \PY{n}{dif} \PY{o}{=} \PY{n}{abs}\PY{p}{(}\PY{n}{psi}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{psi}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+                \PY{k}{if} \PY{n}{dif} \PY{o}{\PYZlt{}} \PY{n}{eps}
+                    \PY{n}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{C}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{g}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{ }\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{o}\PY{l+s}{n}\PY{l+s}{ }\PY{l+s+si}{\PYZdl{}iter}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+                    \PY{k}{break}
+                \PY{k}{end}
+            \PY{k}{end}
+            
+            \PY{k}{return}\PY{p}{(}\PY{k+kt}{Dict}\PY{p}{(}
+                    \PY{l+s}{\PYZdq{}}\PY{l+s}{p}\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{\PYZus{}}\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{c}\PY{l+s}{\PYZdq{}}\PY{o}{=\PYZgt{}} \PY{n}{psi}\PY{p}{,}
+                    \PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{o}{=\PYZgt{}} \PY{n}{psi}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
+                    \PY{p}{)}\PY{p}{)}
+        \PY{k}{end}
+        
+        \PY{c}{\PYZsh{}\PYZsh{} Run on simulated data}
+        \PY{k}{using} \PY{n}{Distributions}\PY{p}{,} \PY{n}{Random}
+        \PY{n}{Random}\PY{o}{.}\PY{n}{seed!}\PY{p}{(}\PY{l+m+mi}{1234}\PY{p}{)}
+        
+        \PY{n}{N} \PY{o}{=} \PY{k+kt}{Int}\PY{p}{(}\PY{l+m+mf}{1e3}\PY{p}{)}
+        \PY{n}{dat} \PY{o}{=} \PY{n}{rand}\PY{p}{(}\PY{n}{Normal}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{,}\PY{n}{N}\PY{p}{)}
+        
+        \PY{c}{\PYZsh{}\PYZsh{} function calls using different types of arguments}
+        \PY{n}{median}\PY{p}{(}\PY{n}{dat}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}1}]:} -0.2880149883794124
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{mm\PYZus{}median}\PY{p}{(}\PY{n}{dat}\PY{p}{,} \PY{l+m+mf}{1e\PYZhy{}9}\PY{p}{)}\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Max iteration reached at iter=25
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}2}]:} -0.2327764134562274
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{mm\PYZus{}median}\PY{p}{(}\PY{n}{dat}\PY{p}{,} \PY{n}{maxit}\PY{o}{=}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Converged at iteration 21
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} -0.21952663270908485
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{mm\PYZus{}median}\PY{p}{(}\PY{n}{dat}\PY{p}{,} \PY{l+m+mf}{1e\PYZhy{}9}\PY{p}{,}\PY{n}{maxit}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{i}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Converged at iteration 44
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} -0.2812122997253034
+\end{Verbatim}
+            
+    Some general tips for using functions are as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write programs as a series of functions because: functions are
+  testable and reusable, they have well-defined inputs and outputs, and
+  code inside funtions usually runs much faster because of how the Julia
+  compiler works.
+\item
+  Functions should not operate on global variables.
+\item
+  Functions with \texttt{!} at the end of their names modify their
+  auguments instead of copying them. Julia library functions often come
+  in two versions, distinguished by the \texttt{!}.
+\item
+  Pass a function directly, do not wrap it in anonymous function.
+\item
+  When writing functions that take numbers as arguments, usethe
+  \texttt{Int} type when possible. When combined in numerical
+  computations, they change the resulting Julia type of the result less
+  frequently. This is known as type promotion.
+\item
+  If functino arguments have specific types, the functino call should
+  force its arguments to the required type.
+\end{enumerate}
+
+The aforementioned tips are illustrated in the following code block.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{c}{\PYZsh{}\PYZsh{} Tip3: functino with a `!` in the name}
+        \PY{n}{a1} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{]}
+        \PY{n}{sort!}\PY{p}{(}\PY{n}{a1}\PY{p}{)}
+        \PY{n}{a1}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} 6-element Array\{Int64,1\}:
+         1
+         2
+         2
+         3
+         6
+         8
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{c}{\PYZsh{}\PYZsh{} Tip4: Don\PYZsq{}t warp abs() in an anonymous function}
+        \PY{n}{A} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{]}
+        \PY{n}{map}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}} \PY{n}{abs}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{,} \PY{n}{A}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} 4-element Array\{Float64,1\}:
+         1.0
+         0.5
+         2.0
+         0.5
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{c}{\PYZsh{}\PYZsh{} Rather, do this }
+        \PY{c}{\PYZsh{}\PYZsh{} abs() is not wrapped in an anonymous functino}
+        \PY{n}{map}\PY{p}{(}\PY{n}{abs}\PY{p}{,} \PY{n}{A}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} 4-element Array\{Float64,1\}:
+         1.0
+         0.5
+         2.0
+         0.5
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{c}{\PYZsh{}\PYZsh{}Tip5: Type promotion}
+         \PY{n}{times1a}\PY{p}{(}\PY{n}{y}\PY{p}{)} \PY{o}{=} \PY{o}{*}\PY{p}{(}\PY{n}{y}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{times1b}\PY{p}{(}\PY{n}{y}\PY{p}{)} \PY{o}{=} \PY{o}{*}\PY{p}{(}\PY{n}{y}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}
+         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{1}\PY{l+s}{a}\PY{l+s}{(}\PY{l+s}{1}\PY{l+s}{/}\PY{l+s}{2}\PY{l+s}{)}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{times1a}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{1}\PY{l+s}{a}\PY{l+s}{(}\PY{l+s}{2}\PY{l+s}{)}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{times1a}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{c}{\PYZsh{}\PYZsh{} preserves tyoe}
+         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{1}\PY{l+s}{a}\PY{l+s}{(}\PY{l+s}{2}\PY{l+s}{.}\PY{l+s}{0}\PY{l+s}{)}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{times1a}\PY{p}{(}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}
+         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{1}\PY{l+s}{b}\PY{l+s}{(}\PY{l+s}{1}\PY{l+s}{/}\PY{l+s}{2}\PY{l+s}{)}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{times1b}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{1}\PY{l+s}{b}\PY{l+s}{(}\PY{l+s}{2}\PY{l+s}{)}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{times1b}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{c}{\PYZsh{}\PYZsh{} changes type}
+         \PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{1}\PY{l+s}{b}\PY{l+s}{(}\PY{l+s}{2}\PY{l+s}{.}\PY{l+s}{0}\PY{l+s}{)}\PY{l+s}{:}\PY{l+s}{ }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{times1b}\PY{p}{(}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+times1a(1/2): 0.5
+times1a(2): 2
+times1a(2.0): 2.0
+times1b(1/2): 0.5
+times1b(2): 2.0
+times1b(2.0): 2.0
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{c}{\PYZsh{}\PYZsh{} tip6: functino with tyoed arguments}
+         \PY{n}{times1c}\PY{p}{(}\PY{n}{y}\PY{o}{::}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=} \PY{o}{*}\PY{p}{(}\PY{n}{y}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{times1c}\PY{p}{(}\PY{n}{float}\PY{p}{(}\PY{l+m+mi}{23}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} 23.0
+\end{Verbatim}
+            
 
     % Add a bibliography block to the postdoc
     
